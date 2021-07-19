@@ -1,32 +1,31 @@
-import { Button, List } from 'antd';
-import { useState } from 'react';
+// import { Button, List } from 'antd';
+import { useEffect, useState } from 'react';
+
+const getFeeds = async () => {
+	return fetch('http://localhost:3000/api/feeds/').then((res) => res.json());
+};
 
 const Feeds = () => {
 	const [feeds, setFeeds] = useState([]);
 
-	const getFeeds = async () => {
-		const response = await fetch('http://localhost:3000/api/feeds/');
-		const feeds = await response.json();
-		console.log(feeds);
-		setFeeds(feeds);
-	};
+	useEffect(() => {
+		getFeeds().then((feeds) => setFeeds(feeds));
+	});
 
 	return (
 		<div>
 			<h1>This Is Feeds</h1>
-
-			<Button onClick={getFeeds}>Get Feeds</Button>
-			{feeds.map((feeds, index) => {
-				const feedName = feeds.feed_name;
-				const feedPrice = feeds.feed_price;
-				return (
-					<List>
-						<List.Item>
+			<ul>
+				{feeds.map((feed) => {
+					const feedName = feed.feed_name;
+					const feedPrice = feed.feed_price;
+					return (
+						<li key={feed.id}>
 							<h2>{feedName}</h2> <h3>{feedPrice}</h3>
-						</List.Item>
-					</List>
-				);
-			})}
+						</li>
+					);
+				})}
+			</ul>
 		</div>
 	);
 };
