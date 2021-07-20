@@ -11,13 +11,28 @@ const DayChart = () => {
 	useEffect(() => {
 		axios
 			.get(url)
-			.then((res) => setDays(res.data))
+			.then((res) => {
+				setDays(res.data);
+				console.log(res.data);
+			})
 			.then(() => setLoading(false))
 			.catch((err) => {
 				console.log(err);
 			});
 	}, []);
 
+	// const dayRun = () => {};
+	let dayArray = [];
+	for (let i = 0; i < days.length; i++) {
+		dayArray.push(days[i].day_recorded);
+	}
+	console.log(dayArray);
+
+	let eggArray = [];
+	for (let i = 0; i < days.length; i++) {
+		eggArray.push(days[i].eggs_collected);
+	}
+	console.log(eggArray);
 	return (
 		<div>
 			<h1>This Is Days</h1>
@@ -31,6 +46,7 @@ const DayChart = () => {
 					</div>
 				) : (
 					<span>chart??</span>
+					// <button onClick={dayRun}>Click</button>
 				)}
 			</ul>
 		</div>
