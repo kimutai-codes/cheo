@@ -8,6 +8,8 @@ import AddFeeder from './pages/AddFeeder';
 import Feeds from './pages/Feeds';
 import Feeders from './pages/Feeders';
 import DayChart from './pages/DayChart';
+import Charty from './pages/basicChart';
+import ReChart from './pages/reactChart';
 
 function App() {
 	return (
@@ -21,6 +23,14 @@ function App() {
 
 					<Route exact path='/daychart'>
 						<DayChart />
+					</Route>
+
+					<Route exact path='/chart'>
+						<Charty />
+					</Route>
+
+					<Route exact path='/rechart'>
+						<ReChart />
 					</Route>
 
 					<Route exact path='/today'>
