@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Bar } from 'react-chartjs-2';
+import { Bar, Line } from 'react-chartjs-2';
+import { format } from 'date-fns';
 
 const DayChart = () => {
 	const url = 'http://192.168.8.101:3000/api/daydata/';
@@ -17,7 +18,9 @@ const DayChart = () => {
 			.then((res) => {
 				for (const dataObj of res.data) {
 					eggNum.push(dataObj.eggs_collected);
-					dayZ.push(dataObj.day_recorded);
+					const date = dataObj.day_recorded;
+					const parsedDate = format(new Date(date), 'do MMM yyy');
+					dayZ.push(parsedDate);
 				}
 				setChartData({
 					labels: dayZ,
@@ -27,13 +30,12 @@ const DayChart = () => {
 							data: eggNum,
 							backgroundColor: 'lightcyan',
 							borderColor: 'grey',
-							borderWidth: 2,
+							borderWidth: 1,
 						},
 					],
 				});
 			})
 			.catch((err) => console.log(err));
-		console.log(eggNum, dayZ);
 	};
 
 	useEffect(() => {
@@ -49,6 +51,10 @@ const DayChart = () => {
 					scales: {
 						y: {
 							beginAtZero: true,
+						},
+						xAxis: {
+							// type: 'time',
+							max: 6,
 						},
 					},
 				}}
