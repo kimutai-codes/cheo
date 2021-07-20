@@ -13,3 +13,17 @@
 .header {
 	background-color: #40a9ff;
 }
+
+ul {
+	list-style-type: none;
+	margin: 0 auto;
+}
+
+.disp {
+	/* color: aquamarine; */
+	border: aquamarine 1px solid;
+	border-radius: 5px;
+	padding: 1em;
+	margin-bottom: 2em;
+	width: 90%;
+}

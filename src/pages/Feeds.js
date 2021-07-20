@@ -1,8 +1,10 @@
 // import { Button, List } from 'antd';
 import { useEffect, useState } from 'react';
 
-const getFeeds = async () => {
-	return fetch('http://localhost:3000/api/feeds/').then((res) => res.json());
+const getFeeds = () => {
+	return fetch('http://192.168.8.101:3000/api/feeds/').then((res) =>
+		res.json()
+	);
 };
 
 const Feeds = () => {
@@ -20,7 +22,7 @@ const Feeds = () => {
 					const feedName = feed.feed_name;
 					const feedPrice = feed.feed_price;
 					return (
-						<li key={feed.id}>
+						<li key={feed.id} className='disp'>
 							<h2>{feedName}</h2> <h3>{feedPrice}</h3>
 						</li>
 					);
