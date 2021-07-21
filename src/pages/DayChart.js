@@ -44,7 +44,7 @@ const DayChart = () => {
 
 	return (
 		<div>
-			<Bar
+			<Line
 				data={chartData}
 				options={{
 					responsive: true,

@@ -1,5 +1,12 @@
 import { Form, Input, Button } from 'antd';
-import { onFinish } from './Login';
+import axios from 'axios';
+
+const url = 'http://192.168.8.101:3000/api/feeds/';
+
+export const onFinish = (values) => {
+	axios.post(url, values).then((res) => console.log(res));
+};
+
 const AddFeed = () => {
 	return (
 		<div className='form-wrapper'>

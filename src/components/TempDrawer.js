@@ -33,14 +33,25 @@ function TempDrawer() {
 					<Menu.Item key={1}>
 						<Link to={`/today`}>Record Today</Link>
 					</Menu.Item>
-					<Menu.Item key={2}>
-						<Link to={`/addfeeder`}>Add Feeders</Link>
-					</Menu.Item>
+
 					<Menu.Item key={3}>
 						<Link to={`/addfeed`}>Add Feeds</Link>
 					</Menu.Item>
+
 					<Menu.Item key={4}>
+						<Link to={`/addfeeder`}>Add Feeders</Link>
+					</Menu.Item>
+
+					<Menu.Item key={2}>
+						<Link to={`/daychart`}>Day Chart</Link>
+					</Menu.Item>
+
+					<Menu.Item key={5}>
 						<Link to={`/feeds`}>Feeds</Link>
+					</Menu.Item>
+
+					<Menu.Item key={6}>
+						<Link to={`/feeders`}>Feeders</Link>
 					</Menu.Item>
 				</Menu>
 			</Drawer>
