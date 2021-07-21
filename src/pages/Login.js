@@ -4,19 +4,25 @@ import { useState } from 'react';
 import Header from '../components/header';
 
 const Login = () => {
-const [success,setSucess]= useState(false)
+const [fail,setFail]= useState('')
+const [success,setSuccess]=useState(false)
 
 const url = 'http://192.168.8.101:3000/api/feeders/login';
 
 const onFinish = (values) => {
 	axios.post(url, values).then((res) => {
-    if(res.data.length ){
-      setSucess(true)
+    if(!res.data.length ){
+      setFail(res.data.message)
+    }else{
+      setSuccess(true)
     }
   });
 };
 	return (
 		<div className='form-wrapper'>
+      {
+        success?<div>Redirect</div>:(<div>
+
 			<PageHeader className='loginheader' />
 			<h1>Hello, Please Log In</h1>
 			<Form onFinish={onFinish}>
@@ -41,6 +47,9 @@ const onFinish = (values) => {
 					</Button>
 				</Form.Item>
 			</Form>
+      <div className="fail">{fail}</div>
+        </div> )
+      }
 		</div>
 	);
 };

@@ -27,3 +27,7 @@ ul {
 	margin-bottom: 2em;
 	width: 90%;
 }
+
+.fail{
+  color: red;
+}
