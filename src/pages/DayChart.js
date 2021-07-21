@@ -54,7 +54,7 @@ const DayChart = () => {
 						},
 						xAxis: {
 							// type: 'time',
-							max: 6,
+							// max: 6,
 						},
 					},
 				}}
