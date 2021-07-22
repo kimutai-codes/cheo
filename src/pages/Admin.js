@@ -1,15 +1,17 @@
 import { Form, Input, Button, PageHeader } from 'antd';
 import axios from 'axios';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import Header from '../components/header';
 import Layout from '../components/Layout';
+import { LoginContext } from '../Helper/Context';
 
 const AdminLogin = () => {
+	const { admin, setAdmin } = useContext(LoginContext);
 	const [fail, setFail] = useState('');
 	const [success, setSuccess] = useState(false);
 
-	const url = 'http://192.168.8.101:3000/api/feeders/login';
+	const url = 'http://192.168.8.101:3000/api/feeders/admin';
 
 	const onFinish = (values) => {
 		axios.post(url, values).then((res) => {
@@ -17,12 +19,12 @@ const AdminLogin = () => {
 				setFail(res.data.message);
 			} else {
 				setSuccess(true);
+				setAdmin(true);
 			}
 		});
 	};
 	return (
 		<>
-			<Layout />
 			<div className='form-wrapper'>
 				{success ? (
 					<div>
