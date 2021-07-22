@@ -9,15 +9,23 @@ import Feeds from './pages/Feeds';
 import Feeders from './pages/Feeders';
 import DayChart from './pages/DayChart';
 import { useLocation } from 'react-router-dom';
+import AdminLogin from './pages/Admin';
+import { LoginContext } from './Helper/Context';
+import { useState } from 'react';
 
 function App() {
+	const [admin, setAdmin] = useState(false);
 	return (
-		<div className='App'>
+		<LoginContext.Provider className='App' value={{ admin, setAdmin }}>
 			<Router>
 				{/* <Layout /> */}
 				<Switch>
 					<Route exact path='/'>
 						<Login />
+					</Route>
+
+					<Route exact path='/admin' admin='true'>
+						<AdminLogin />
 					</Route>
 
 					<Route exact path='/daychart'>
@@ -45,7 +53,7 @@ function App() {
 					</Route>
 				</Switch>
 			</Router>
-		</div>
+		</LoginContext.Provider>
 	);
 }
 

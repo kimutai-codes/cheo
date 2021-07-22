@@ -1,13 +1,16 @@
 import axios from 'axios';
 import { useEffect } from 'react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
 import { format } from 'date-fns';
 import Layout from '../components/Layout';
+import { LoginContext } from '../Helper/Context';
 
 const DayChart = () => {
 	const url = 'http://192.168.8.101:3000/api/daydata/';
 	const [chartData, setChartData] = useState({});
+	const { admin, setAdmin } = useContext(LoginContext);
+
 	// const [day, setDay] = useState([]);
 	// const [eggs, setEggs] = useState([]);
 
@@ -61,6 +64,7 @@ const DayChart = () => {
 					},
 				}}
 			/>
+
 		</div>
 	);
 };
