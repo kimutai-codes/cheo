@@ -12,6 +12,9 @@
 
 .header {
 	background-color: #40a9ff;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 ul {
@@ -28,6 +31,13 @@ ul {
 	width: 90%;
 }
 
-.fail{
-  color: red;
+.fail {
+	color: red;
+}
+
+.logout {
+	background-color: red;
+	/* display: inline; */
+	margin-left: auto;
+	align-items: flex-start;
 }

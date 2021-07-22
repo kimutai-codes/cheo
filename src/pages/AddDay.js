@@ -7,23 +7,15 @@ const url = 'http://192.168.8.101:3000/api/daydata/';
 
 export const onFinish = (values) => {
 	axios.post(url, values).then((res) => console.log(res));
-	console.log(values);
 };
 
 const AddDay = () => {
-	const onFinish = (values) => {
-		console.log('Success:', values);
-	};
 	return (
 		<>
 			<Layout />
 			<div className='form-wrapper'>
 				<h1>Add Day</h1>
 				<Form onFinish={onFinish}>
-					{/* <Form.Item name='dayRecorded'>
-					<Input placeholder='Enter The Date' required></Input>
-				</Form.Item> */}
-
 					<Form.Item name='feed_quantity'>
 						<Input
 							placeholder='Enter The Feed Quantity '
