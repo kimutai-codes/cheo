@@ -8,12 +8,13 @@ import AddFeeder from './pages/AddFeeder';
 import Feeds from './pages/Feeds';
 import Feeders from './pages/Feeders';
 import DayChart from './pages/DayChart';
+import { useLocation } from 'react-router-dom';
 
 function App() {
 	return (
 		<div className='App'>
 			<Router>
-				<Layout />
+				{/* <Layout /> */}
 				<Switch>
 					<Route exact path='/'>
 						<Login />

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
 import { format } from 'date-fns';
+import Layout from '../components/Layout';
 
 const DayChart = () => {
 	const url = 'http://192.168.8.101:3000/api/daydata/';
@@ -44,6 +45,7 @@ const DayChart = () => {
 
 	return (
 		<div>
+			<Layout />
 			<Line
 				data={chartData}
 				options={{
