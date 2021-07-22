@@ -1,11 +1,13 @@
 import { Form, Input, Button, PageHeader } from 'antd';
 import axios from 'axios';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import { LoginContext } from '../Helper/Context';
 
 const Login = () => {
 	const [fail, setFail] = useState('');
 	const [success, setSuccess] = useState(false);
+	const { admin, setAdmin } = useContext(LoginContext);
 
 	const url = 'http://192.168.8.101:3000/api/feeders/login';
 
@@ -15,6 +17,8 @@ const Login = () => {
 				setFail(res.data.message);
 			} else {
 				setSuccess(true);
+				//set admin false
+				setAdmin(false);
 			}
 		});
 	};
