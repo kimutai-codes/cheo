@@ -12,6 +12,7 @@ import { useLocation } from 'react-router-dom';
 import AdminLogin from './pages/Admin';
 import { LoginContext } from './Helper/Context';
 import { useState } from 'react';
+import Home from './pages/Home';
 
 function App() {
 	const [admin, setAdmin] = useState(false);
@@ -21,10 +22,14 @@ function App() {
 				{/* <Layout /> */}
 				<Switch>
 					<Route exact path='/'>
+						<Home />
+					</Route>
+
+					<Route exact path='/login'>
 						<Login />
 					</Route>
 
-					<Route exact path='/admin' admin='true'>
+					<Route exact path='/admin'>
 						<AdminLogin />
 					</Route>
 
