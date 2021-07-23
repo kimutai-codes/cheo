@@ -41,3 +41,18 @@ ul {
 	margin-left: auto;
 	align-items: flex-start;
 }
+
+.homediv {
+	width: 40%;
+	margin: 0 auto;
+	padding: 10px;
+	text-align: center;
+}
+
+.userBtn {
+	margin: 10px;
+}
+
+.admnBtn {
+	/* background-color: palevioletred; */
+}

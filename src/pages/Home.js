@@ -13,14 +13,14 @@ const Home = () => {
 	};
 	console.log(wantreg);
 	return (
-		<div>
+		<div className='homediv'>
 			<h1>Welcome</h1>
 			<h2>Who Would You Like To Sign In As</h2>
-			<Button type='primary' className='homeBtn' onClick={reg}>
-				User Login
+			<Button type='primary' className='userBtn' onClick={reg}>
+				User
 			</Button>
-			<Button type='primary' className='homeBtn' onClick={admn}>
-				Admin Login
+			<Button type='primary' className='admnBtn' onClick={admn}>
+				Admin
 			</Button>
 			{wantreg ? <Redirect to='/login' /> : null}
 			{wantadmin ? <Redirect to='/admin' /> : null}

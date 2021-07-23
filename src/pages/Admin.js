@@ -33,7 +33,7 @@ const AdminLogin = () => {
 				) : (
 					<div>
 						<PageHeader className='Adminloginheader' />
-						<h1>Hello, Please Log In</h1>
+						<h1>Admin Login</h1>
 						<Form onFinish={onFinish}>
 							<Form.Item name='first_name'>
 								<Input

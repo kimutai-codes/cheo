@@ -62,8 +62,7 @@ function TempDrawer() {
 					</Drawer>
 
 					<div>
-						{' '}
-						{admin ? <div>Admin</div> : <div>Not Admin</div>}{' '}
+						{/* {admin ? <div>Admin</div> : <div>Not Admin</div>}{' '} */}
 					</div>
 				</div>
 			) : (
@@ -86,27 +85,22 @@ function TempDrawer() {
 								<Link to={`/today`}>Record Today</Link>
 							</Menu.Item>
 
-							<Menu.Item key={3}>
-								<Link to={`/addfeed`}>Add Feeds</Link>
-							</Menu.Item>
-
 							<Menu.Item key={2}>
 								<Link to={`/daychart`}>Day Chart</Link>
 							</Menu.Item>
 
-							<Menu.Item key={5}>
+							<Menu.Item key={3}>
 								<Link to={`/feeds`}>Feeds</Link>
 							</Menu.Item>
 
-							<Menu.Item key={6}>
+							<Menu.Item key={4}>
 								<Link to={`/feeders`}>Feeders</Link>
 							</Menu.Item>
 						</Menu>
 					</Drawer>
 
 					<div>
-						{' '}
-						{admin ? <div>Admin</div> : <div>Not Admin</div>}{' '}
+						{/* {admin ? <div>Admin</div> : <div>Not Admin</div>}{' '} */}
 					</div>
 				</div>
 			)}
