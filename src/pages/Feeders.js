@@ -46,6 +46,7 @@ const Feeders = () => {
 							return (
 								<li key={feeder.id} className='disp'>
 									<h2>{feederName}</h2>
+									<p>ID: {feeder.id} </p>
 									<p>Email: {feederEmail} </p>
 									<p>Phone: {feederPhone} </p>
 									<p> {isAdmin}</p>

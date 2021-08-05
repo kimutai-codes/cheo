@@ -39,7 +39,9 @@ const Feeds = () => {
 							const feedPrice = feed.feed_price;
 							return (
 								<li key={feed.id} className='disp'>
-									<h2>{feedName}</h2> <h3>{feedPrice}</h3>
+									<h2>{feedName}</h2>{' '}
+									<h3>Feed ID: {feed.id}</h3>
+									<h3>Feed Price: Ksh {feedPrice}</h3>
 								</li>
 							);
 						})
