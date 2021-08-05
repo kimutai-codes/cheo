@@ -8,9 +8,9 @@ export const Logout = () => {
 		setClicked(true);
 	};
 	return (
-		<div className='logout'>
+		<span className='logout'>
 			{clicked ? <Redirect to='/' /> : null}
 			<Button onClick={logout}>Logout</Button>
-		</div>
+		</span>
 	);
 };

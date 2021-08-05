@@ -13,8 +13,7 @@
 .header {
 	background-color: #40a9ff;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	flex-direction: column-reverse;
 }
 
 ul {
@@ -35,11 +34,11 @@ ul {
 	color: red;
 }
 
-.logout {
-	background-color: red;
-	/* display: inline; */
+.logout button {
+	display: inline;
+	margin-top: 20px;
 	margin-left: auto;
-	align-items: flex-start;
+	align-items: flex-end;
 }
 
 .homediv {

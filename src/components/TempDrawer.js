@@ -17,9 +17,9 @@ function TempDrawer() {
 	};
 
 	return (
-		<div>
+		<span>
 			{admin ? (
-				<div>
+				<span>
 					<Button type='primary' onClick={showDrawer}>
 						<MenuOutlined />
 					</Button>
@@ -64,9 +64,9 @@ function TempDrawer() {
 					<div>
 						{/* {admin ? <div>Admin</div> : <div>Not Admin</div>}{' '} */}
 					</div>
-				</div>
+				</span>
 			) : (
-				<div>
+				<span>
 					<Button type='primary' onClick={showDrawer}>
 						<MenuOutlined />
 					</Button>
@@ -102,10 +102,10 @@ function TempDrawer() {
 					<div>
 						{/* {admin ? <div>Admin</div> : <div>Not Admin</div>}{' '} */}
 					</div>
-				</div>
+				</span>
 			)}
 			{/* TODO replace with icon */}
-		</div>
+		</span>
 	);
 }
 
