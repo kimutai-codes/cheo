@@ -1,14 +1,17 @@
 import { Form, Input, Button } from 'antd';
 import axios from 'axios';
 import Layout from '../components/Layout';
+import { useState } from 'react';
 
 const url = 'http://192.168.8.101:3000/api/feeds/';
 
-export const onFinish = (values) => {
-	axios.post(url, values).then((res) => console.log(res));
-};
-
 const AddFeed = () => {
+	const [clicked, setClicked] = useState(false);
+	const onFinish = (values) => {
+		axios.post(url, values).then((res) => console.log(res));
+		setClicked(true);
+	};
+
 	return (
 		<>
 			<Layout />
@@ -36,6 +39,10 @@ const AddFeed = () => {
 						</Button>
 					</Form.Item>
 				</Form>
+
+				{clicked ? (
+					<span className='submitted'>Form Submitted</span>
+				) : null}
 			</div>
 		</>
 	);
