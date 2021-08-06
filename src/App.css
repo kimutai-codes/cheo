@@ -55,3 +55,7 @@ ul {
 .admnBtn {
 	/* background-color: palevioletred; */
 }
+
+.submitted {
+	color: red;
+}
